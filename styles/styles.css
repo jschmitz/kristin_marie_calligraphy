@@ -33,19 +33,29 @@ img, div {
   	color-stop(0.5, rgb(133,37,130)),
   	color-stop(1, rgb(68,17,71))
   );
-  text-align: left;
+  text-align: center;
   height: 60px;
   width: 100%;
   -moz-box-shadow: 0 0 5px 5px #888;
   -webkit-box-shadow: 0 0 5px 5px #888;
   box-shadow: 0 0 5px 5px #888;
   float:left;
-	*background: #651f69;
+	*background: url('../images/ieheader.png');
+	*height: 65px;
+}
+#header h1 {
+  text-align: left;
 }
 #pen_container{
   width: 960px;
-  margin: 0 auto;
 	font-color: #fff;
+	
+  height: 60px;
+	margin-left: auto;
+  margin-right: auto;
+	position: relative; 
+  text-align: center; 
+  margin: 0 auto 0;
 }
 #pen{
   background: url('../images/pen.png');
@@ -55,17 +65,20 @@ img, div {
   width: 120px;
   height:173px;
   float:left;
-	*height: 0;
-	*top: -30px;
+  
+  *height: 0;
+  *top: -30px;
 }
 #pen_container .headercontainer{
   margin: 0 auto;
-  height: 168px;
+  height: 60px;
   color: #FFF;
   position: relative;
   right: 100px;
-	*height: 10px;
-
+/*  *height: 10px;*/
+    
+  *float: left;
+  text-align:center;
 }
 #pen_container .headercontainer .container{
   position:relative;
@@ -80,8 +93,14 @@ img, div {
   width: 51px;
   height: 30px;
   position: relative;
-  left: 190px;
+  
+  left: 195px;
+  *left: 115px;
+  *top: 33px;
+  
+  /*left: 75px;*/
   top: 38px;
+  /*float: left;*/
 }
 .container img{
   position: relative;
