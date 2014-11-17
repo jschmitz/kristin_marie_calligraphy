@@ -19,7 +19,7 @@ var gulp = require('gulp'),
 
 // Default task
 gulp.task('default', ['clean'], function() {
-    gulp.start('usemin', 'html', 'styles', 'images');
+    gulp.start('html', 'styles', 'scripts', 'images');
 });
 
 // HTML
@@ -32,10 +32,19 @@ gulp.task('html', function() {
 
 // Styles
 gulp.task('styles', function() {
-  return gulp.src(['src/bootstrap/css/*.min*','src/styles/*'])
+  return gulp.src(['src/styles/*'])
     .pipe(minifycss())
     .pipe(concat('all.min.css'))
     .pipe(gulp.dest('dist/styles'))
+    .pipe(gzip())
+});
+
+// Scripts
+gulp.task('scripts', function() {
+  return gulp.src(['src/scritps/jquery-1.6.1.min.js', 'src/scripts/jquery.js', 'src/scripts/jquery.l*', 'src/scripts/jquery.nivo.slider.pack.js'])
+    .pipe(minifycss())
+    .pipe(concat('all.min.js'))
+    .pipe(gulp.dest('dist/scripts'))
     .pipe(gzip())
 });
 
@@ -55,7 +64,8 @@ gulp.task('clean', function(cb) {
 gulp.task('usemin', function() {
   gulp.src('src/*.html')
     .pipe(usemin({
-      css: []
+      css: [],
+      js: []
     }))
     .pipe(gulp.dest('dist/'));
 });
